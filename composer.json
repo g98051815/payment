@@ -1,0 +1,15 @@
+{
+    "name": "chhy/payment",
+    "description": "连连支付以及其他集成支付",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "6.*"
+    },
+    "authors": [
+        {
+            "name": "carl",
+            "email": "g98051815@aliyun.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
