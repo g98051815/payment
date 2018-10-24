@@ -41,19 +41,17 @@ class QueryOrder implements Query{
 
         $queryParam = $params->getVariateWithMapping();
 
+
         $params->setVariate(  'sign' , RsaEncryption::encryption( http_build_query( $queryParam  ) ) );
 
         $queryParam = $params->getVariateWithMapping();
 
-
         $client = new Client();
-        
+
 
 
         $res = $client->request('POST',PathConfig::QUERY_ORDER , [
-
-                    'json'=>$queryParam,
-
+                    'body'=>self::Encode( $queryParam ),
         ]);
 
         echo $res->getBody();

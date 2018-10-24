@@ -59,6 +59,8 @@ class RsaEncryption{
 
         $verify = openssl_verify( $content , base64_decode( $sign ) , $publicKeySource , OPENSSL_ALGO_MD5 );
 
+        openssl_free_key( $publicKeySource );
+
         return $verify > 0 ? true : false;
 
     }
