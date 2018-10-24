@@ -54,16 +54,12 @@ class ParamsBase  {
 
             unset( $variate['mapping'] );
 
-            ksort( $variate );
-
             return array_filter( $variate ,[$this,'paramFilter']);
 
         }
 
 
         //对字段进行字母正序排序
-
-
 
 
         return $this->$key;
@@ -100,6 +96,8 @@ class ParamsBase  {
             $result[ $index ] = $value;
 
         }
+
+        ksort( $result );
 
         return $result;
     }
