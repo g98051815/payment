@@ -1,8 +1,9 @@
 <?php
 namespace xq\lianlian\params;
-use xq\interfacelib\LianLianParam;
+use xq\core\ParamsBase;
+use xq\interfacelib\Params;
 
-class QueryParam implements LianLianParam{
+class QueryParam extends ParamsBase implements Params{
 
 
 
@@ -55,6 +56,18 @@ class QueryParam implements LianLianParam{
     //收付标示为 2,3 的情况下 需要传用户唯一 编号
     protected $userId;
 
+
+    protected $mapping = [
+        'oidPartNer'=>'oid_partner',
+        'signType'=>'sign_type',
+        'sign'=>'sign',
+        'orderNo'=>'no_order',
+        'oidPayBill'=>'oid_paybill',
+        'orderAt'=>'dt_order',
+        'typeLogo'=>'type_dc',
+        'version'=>'query_version',
+        'userId'=>'user_id'
+    ];
 
 
 

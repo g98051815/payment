@@ -1,10 +1,11 @@
 <?php
 namespace xq\lianlian\params;
-use xq\interfacelib\LianLianParam;
+use xq\interfacelib\Params;
+use xq\core\ParamsBase;
 /**
  * 连连支付参数的实现
 */
-class GenerateParam implements LianLianParam{
+class GenerateParam extends ParamsBase implements Params{
 
 
 
@@ -22,7 +23,7 @@ class GenerateParam implements LianLianParam{
 
     //对应字段 openid [对应连连支付的字段]
     //@description 微信或者支付宝的openid
-    protected $openid;
+    protected $openId;
 
     //对应字段 busi_partner [对应连连支付的字段]
     //@description 虚拟商品销售 商户的业务类型
@@ -153,6 +154,7 @@ class GenerateParam implements LianLianParam{
     //@description 卖方发货有效期
     //分钟为单位，默认为 10080 分钟(7 天)， 从创建时间开始，过了此订单有效时间此笔 订单就会被设置为失败状态不能再重新进 行支付。
     protected $sellerSandValid;
+
 
 
 }

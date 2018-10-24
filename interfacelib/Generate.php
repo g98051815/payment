@@ -6,10 +6,15 @@ interface Generate
 
     /**
      * 回调的参考值具体内容参考LianLianParam接口内容
+     * @param  $params [参数]
+     * @param  $config [配置的参数]
     */
-    public static function generate( LianLianParam $param );
+    public function generate( $config ,  Params $params );
 
-
-    public static function notify( LianLianNotify $response );
+    /**
+     * @description 订单的通知接口
+     *
+    */
+    public function notify( LianLianNotify $response );
 
 }

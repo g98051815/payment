@@ -1,8 +1,8 @@
 <?php
 namespace xq\lianlian\params;
-use xq\interfacelib\LianLianNotify;
+use xq\interfacelib\Params;
 
-class NotifyParam implements LianLianNotify{
+class NotifyParam implements Params{
 
 
 }

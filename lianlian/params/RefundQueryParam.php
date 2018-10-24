@@ -1,8 +1,8 @@
 <?php
 namespace xq\lianlian\params;
-use xq\interfacelib\LianLianParam;
+use xq\interfacelib\Params;
 
-class RefundQueryParam implements LianLianParam{
+class RefundQueryParam implements Params{
 
     //对应字段 no_order [对应连连支付的字段]
     //@description 商户编号 商户编号是商户在连连支付支付平台上开设的 商户号码，为 18 位数字，如: 201304121000001004
