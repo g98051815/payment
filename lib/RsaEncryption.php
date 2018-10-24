@@ -48,6 +48,23 @@ class RsaEncryption{
 
 
     /**
+     * @description 验证签名的函数
+     * @param $content [验证签名的内容]
+     * @param $sign [签名内容]
+     * @return boolean
+    */
+    public static function verifySign( $content , $sign ){
+
+        $publicKeySource = self::getPublicKeySource();
+
+        $verify = openssl_verify( $content , base64_decode( $sign ) , $publicKeySource );
+
+        return $verify > 0 ? true : false;
+
+    }
+
+
+    /**
      * @description 设置私匙
      * @param  $context [私匙内容]
      * @throws RsaEncryptionException
@@ -70,6 +87,30 @@ class RsaEncryption{
         }
 
         self::$privateKeySource = $privateKeySource;
+
+    }
+
+
+    /**
+     * @description 设置公匙
+     * @param $context  [公匙内容]
+     * @throws RsaEncryptionException
+     * @return string
+    */
+    public static function setPublicKey( $context ){
+        $publicKey="-----BEGIN PUBLIC KEY-----\r\n";
+        $publicKey.=$context;
+        $publicKey.="\r\n-----END PUBLIC KEY-----";
+        self::$publicKey = $publicKey;
+        $publicKeySource = openssl_pkey_get_public( $publicKey );
+
+        if( false === $publicKeySource ){
+
+            throw new RsaEncryptionException( '公匙不合法' );
+
+        }
+
+        self::$publicKeySource = $publicKeySource;
 
     }
 

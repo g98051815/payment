@@ -22,7 +22,7 @@ class QueryOrder implements Query{
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \xq\exception\RsaEncryptionException
     */
-    public  function search( Params $params ){
+    public function search( Params $params ){
 
 
 
@@ -35,24 +35,24 @@ class QueryOrder implements Query{
 
         $params->setVariate( 'oidPartNer', $config['oid_partner'] );
 
+        RsaEncryption::setPublicKey( self::getPrivateKey( $config['public_key'] ) );
 
 
-
-        $params->setVariate(  'sign' , RsaEncryption::encryption( http_build_query( $params->getVariateWithMapping( )  ) ) );
 
         $queryParam = $params->getVariateWithMapping();
+
+        $params->setVariate(  'sign' , RsaEncryption::encryption( http_build_query( $queryParam  ) ) );
+
+        $queryParam = $params->getVariateWithMapping();
+
+
 
         $client = new Client();
 
 
-
         $res = $client->request('POST',PathConfig::QUERY_ORDER , [
 
-
-
                     'json'=>$queryParam,
-
-
 
         ]);
 
