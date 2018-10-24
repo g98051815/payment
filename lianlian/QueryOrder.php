@@ -47,11 +47,7 @@ class QueryOrder implements Query{
 
 
         $client = new Client();
-
-
-        var_dump( $queryParam );
-
-        exit;
+        
 
 
         $res = $client->request('POST',PathConfig::QUERY_ORDER , [
