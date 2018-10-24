@@ -86,9 +86,9 @@ class Appinstance{
             //商户账号
             'oid_partner'=>'201806250001948345',
             //私匙
-            'private_key'=>__DIR__.'/app_private_key.pem',
+            'private_key'=>__DIR__.'/rsa_private_key.pem',
             //公匙
-            'public_key'=>__DIR__.'/app_public_key.pem',
+            'public_key'=>__DIR__.'/rsa_public_key.pem',
             //签名的方式
             'sign_type'=>'RSA'
         ];
