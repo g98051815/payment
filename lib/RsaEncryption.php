@@ -57,7 +57,7 @@ class RsaEncryption{
 
         $publicKeySource = self::getPublicKeySource();
 
-        $verify = openssl_verify( $content , base64_decode( $sign ) , $publicKeySource );
+        $verify = openssl_verify( $content , base64_decode( $sign ) , $publicKeySource , OPENSSL_ALGO_MD5 );
 
         return $verify > 0 ? true : false;
 
