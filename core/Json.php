@@ -18,7 +18,7 @@ trait Json{
     */
     public static function Encode( array $content ){
 
-        return json_encode( $content , JSON_UNESCAPED_UNICODE );
+        return json_encode( $content , JSON_UNESCAPED_SLASHES);
 
     }
 

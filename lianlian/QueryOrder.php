@@ -42,9 +42,10 @@ class QueryOrder implements Query{
         $queryParam = $params->getVariateWithMapping();
 
 
-        $params->setVariate(  'sign' , urlencode( RsaEncryption::encryption( http_build_query( $queryParam  ) ) ) );
+        $params->setVariate(  'sign' , RsaEncryption::encryption( http_build_query( $queryParam  ) ) );
 
         $queryParam = $params->getVariateWithMapping();
+
 
         $client = new Client();
 
