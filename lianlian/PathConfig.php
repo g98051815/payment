@@ -7,7 +7,7 @@ class PathConfig{
     const OTHER_PLATFORM_GENERATE = 'https://wallet.lianlianpay.com/llwalletapi/combinepay.htm';
 
     //查询订单当前的状态
-    const QUERY_ORDER = 'https://wallet.lianlianpay.com/llwalletapi/orderquery.htm';
+    const QUERY_ORDER = 'https://queryapi.lianlianpay.com/orderquery.htm';
 
     //退款订单
     const REFUND_ORDER_GENERATE = 'https://traderapi.lianlianpay.com/refund.htm';

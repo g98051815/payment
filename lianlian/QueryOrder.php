@@ -46,7 +46,6 @@ class QueryOrder implements Query{
 
         $queryParam = $params->getVariateWithMapping();
 
-
         $client = new Client();
 
         $res = $client->request('POST',PathConfig::QUERY_ORDER , [

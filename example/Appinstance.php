@@ -77,8 +77,7 @@ class Appinstance{
             [
                 'oidPartNer'=>'abcdef00101212',
                 'orderNo'=>'hello',
-                'orderAt'=>date('YmdHis', strtotime( '-5year' , time() ) ),
-                'typeLogo'=>0
+                'orderAt'=>date('YmdHis' ),
             ]
         );
 

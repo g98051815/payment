@@ -41,11 +41,6 @@ class QueryParam extends ParamsBase implements Params{
     protected $orderAt;
 
 
-    //对应字段 type_dc [对应连连支付字段]
-    //@description 收付标识
-    //收付 类型，标志交易收付款 方类型 0:商户 收款(单 业务等) 1:商户付款 (商户 提现、批付 提现、批付 业务 等) 2:内部收款(用户收款，转账，充值等) 3:用户提现
-    protected $typeLogo;
-
     //对应字段 query_version [对应连连支付字段]
     //@description 查询版本号
     //查询版本号 默认 1.0
@@ -64,7 +59,6 @@ class QueryParam extends ParamsBase implements Params{
         'orderNo'=>'no_order',
         'oidPayBill'=>'oid_paybill',
         'orderAt'=>'dt_order',
-        'typeLogo'=>'type_dc',
         'version'=>'query_version',
         'userId'=>'user_id'
     ];
