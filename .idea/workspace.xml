@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6b8b0e2-3305-47a8-bcfb-cbd7bad87935" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/example/Appinstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/example/Appinstance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/app_private_key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/app_public_key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lianlian/QueryOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/lianlian/QueryOrder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,46 +15,12 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="GenerateParam.php" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/lianlian/params/GenerateParam.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="105">
-                    <caret line="7" column="38" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="38" />
-                    <folding>
-                      <element signature="e#36#63#0#PHP" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="QueryParam.php" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/lianlian/params/QueryParam.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="737">
-                    <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-                    <folding>
-                      <element signature="e#36#59#0#PHP" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="GenerateOrder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/GenerateOrder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="630">
               <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="e#24#42#0#PHP" expanded="true" />
@@ -67,7 +32,7 @@
       <file leaf-file-name="Appinstance.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/Appinstance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
+            <state relative-caret-position="809">
               <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
               <folding>
                 <element signature="e#28#68#0#PHP" expanded="true" />
@@ -76,29 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rsa_private_key.pem" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/rsa_private_key.pem">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rsa_public_key.pem" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/rsa_public_key.pem">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryOrder.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="QueryOrder.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lianlian/QueryOrder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="556">
+              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
               <folding>
                 <element signature="e#30#52#0#PHP" expanded="true" />
               </folding>
@@ -110,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/lianlian/PathConfig.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -118,7 +65,7 @@
       <file leaf-file-name="ParamsBase.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/ParamsBase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
+            <state relative-caret-position="809">
               <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
             </state>
           </provider>
@@ -127,7 +74,7 @@
       <file leaf-file-name="RsaEncryption.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/RsaEncryption.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
+            <state relative-caret-position="809">
               <caret line="74" column="53" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
             </state>
           </provider>
@@ -207,10 +154,10 @@
         <option value="$PROJECT_DIR$/example/app_public_key.pem" />
         <option value="$PROJECT_DIR$/core/ParamsBase.php" />
         <option value="$PROJECT_DIR$/lib/RsaEncryption.php" />
-        <option value="$PROJECT_DIR$/lianlian/QueryOrder.php" />
         <option value="$PROJECT_DIR$/example/Appinstance.php" />
         <option value="$PROJECT_DIR$/example/rsa_private_key.pem" />
         <option value="$PROJECT_DIR$/example/rsa_public_key.pem" />
+        <option value="$PROJECT_DIR$/lianlian/QueryOrder.php" />
       </list>
     </option>
   </component>
@@ -335,12 +282,14 @@
       <workItem from="1540187712509" duration="18194000" />
       <workItem from="1540275648254" duration="11405000" />
       <workItem from="1540362789951" duration="5012000" />
-      <workItem from="1540377766870" duration="486000" />
+      <workItem from="1540377766870" duration="784000" />
+      <workItem from="1540435672353" duration="24000" />
+      <workItem from="1540442409410" duration="674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55732000" />
+    <option name="totallyTimeSpent" value="56728000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1795" y="50" width="1680" height="960" extended-state="0" />
@@ -554,13 +503,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/app_private_key.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="56" lean-forward="true" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example/app_private_key.pem" />
     <entry file="file://$PROJECT_DIR$/exception/RsaEncryptionException.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -639,7 +582,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/GenerateOrder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="630">
           <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="e#24#42#0#PHP" expanded="true" />
@@ -661,50 +604,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/app_public_key.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/ParamsBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lianlian/PathConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/RsaEncryption.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="53" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example/app_public_key.pem" />
     <entry file="file://$PROJECT_DIR$/lianlian/params/GenerateParam.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="38" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="38" />
           <folding>
             <element signature="e#36#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lianlian/params/QueryParam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-          <folding>
-            <element signature="e#36#59#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -716,19 +622,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lianlian/QueryOrder.php">
+    <entry file="file://$PROJECT_DIR$/lianlian/params/QueryParam.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="212">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="e#30#52#0#PHP" expanded="true" />
+            <element signature="e#36#59#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/RsaEncryption.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="74" column="53" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/ParamsBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lianlian/PathConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/rsa_public_key.pem">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/rsa_private_key.pem">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="56" lean-forward="true" selection-end-line="24" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/Appinstance.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
+        <state relative-caret-position="809">
           <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
           <folding>
             <element signature="e#28#68#0#PHP" expanded="true" />
@@ -736,17 +677,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/rsa_private_key.pem">
+    <entry file="file://$PROJECT_DIR$/lianlian/QueryOrder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/rsa_public_key.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        <state relative-caret-position="556">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <folding>
+            <element signature="e#30#52#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
