@@ -75,9 +75,9 @@ class RsaEncryption{
     public static function setPrivateKey( $context ){
 
         $privateKey="-----BEGIN RSA PRIVATE KEY-----\r\n";
-        $privateKey.=$context;
+        $privateKey.=trim($context);
         $privateKey.="\r\n-----END RSA PRIVATE KEY-----";
-
+//	var_dump($privateKey);exit;
         self::$privateKey = $privateKey;
 
         $privateKeySource = openssl_pkey_get_private( $privateKey );

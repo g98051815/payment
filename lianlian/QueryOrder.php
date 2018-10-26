@@ -30,7 +30,7 @@ class QueryOrder implements Query{
         $config = self::getConfigure();
 
         RsaEncryption::setPrivateKey( self::getPrivateKey( $config['private_key'] ) );
-
+       
         $params->setVariate( 'signType' , $config['sign_type'] );
 
         $params->setVariate( 'oidPartNer', $config['oid_partner'] );
@@ -48,8 +48,15 @@ class QueryOrder implements Query{
 
         $client = new Client();
 
+	echo( self::Encode( $queryParam ) );exit;
+
         $res = $client->request('POST',PathConfig::QUERY_ORDER , [
+		    'headers'=>[
+			'Accept'=>'application/json'
+		    ],
+		    'verify'=>false,
                     'body'=>self::Encode( $queryParam ),
+		    'debug'=>true
         ]);
 
         echo $res->getBody();
