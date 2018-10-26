@@ -28,6 +28,7 @@ class RsaEncryption{
 
         $privateKeySource = self::getPrivateKeySource();
 
+
         openssl_sign( $content , $signature , $privateKeySource );
 
         openssl_free_key( $privateKeySource );

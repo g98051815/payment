@@ -49,6 +49,7 @@ class QueryOrder implements Query{
         $client = new Client();
 
         $res = $client->request('POST',PathConfig::QUERY_ORDER , [
+
                     'body'=>self::Encode( $queryParam ),
         ]);
 
