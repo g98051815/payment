@@ -37,25 +37,21 @@ class QueryOrder implements Query{
 
         RsaEncryption::setPublicKey( self::getPrivateKey( $config['public_key'] ) );
 
-
-
         $queryParam = $params->getVariateWithMapping();
-
-
+        
         $params->setVariate(  'sign' , RsaEncryption::encryption( http_build_query( $queryParam  ) ) );
 
         $queryParam = $params->getVariateWithMapping();
 
         $client = new Client();
 
-
         $res = $client->request('POST',PathConfig::QUERY_ORDER , [
-		    'headers'=>[
-			'Accept'=>'application/json'
-		    ],
 		    'verify'=>false,
+
                     'body'=>self::Encode( $queryParam ),
-		    'debug'=>true
+
+		    'debug'=>false
+
         ]);
 
         echo $res->getBody();
