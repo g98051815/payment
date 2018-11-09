@@ -1,12 +1,9 @@
 <?php
-namespace xq\lianlian\params;
+namespace xq\lianlian\params\generate_other_platform;
 use xq\interfacelib\Params;
 use xq\core\ParamsBase;
-/**
- * 连连支付参数的实现
-*/
-class GenerateParam extends ParamsBase implements Params{
 
+class GenerateOrderBase extends ParamsBase implements Params{
 
 
     //对应字段 no_order [对应连连支付的字段]
@@ -88,11 +85,11 @@ class GenerateParam extends ParamsBase implements Params{
     //@description 商家的回调通知接口
     protected $notifyUrl;
 
-    //对应的字段 notify_url [对应连连支付的字段]
+    //对应的字段 return_url [对应连连支付的字段]
     //@description 商家回调通知
     protected $returnUrl;
 
-    //对应的字段 order_description [对应连连支付的字段]
+    //对应的字段 info_order [对应连连支付的字段]
     //@description 订单的描述
     protected $orderDescription;
 
@@ -130,7 +127,7 @@ class GenerateParam extends ParamsBase implements Params{
     //@description 请求签名方式
     //默认只有一种签名方式就是RSA
     //全参数加签
-    protected $signType;
+    protected $signType = 'RSA';
 
     //对应字段 sign [对应连连支付的字段]
     //@description 签名串
@@ -138,10 +135,10 @@ class GenerateParam extends ParamsBase implements Params{
     protected $sign;
 
 
-    //对应字段 secured_partn er [对应连连支付的字段]
+    //对应字段 secured_partner [对应连连支付的字段]
     //@description 担保商户编号
     // 担保商户号是商户在连连支付支付平台上 开设结算到银行账户的商户号码，为 18 位 数字，如:201304121000001004 传了该字段，会走担保相关交易
-    protected $GuarnteeMerchantNumber;
+    protected $securedPartner;
 
 
     //对应字段 buyer_confirm_valid [对应连连支付的字段]
@@ -155,6 +152,59 @@ class GenerateParam extends ParamsBase implements Params{
     //分钟为单位，默认为 10080 分钟(7 天)， 从创建时间开始，过了此订单有效时间此笔 订单就会被设置为失败状态不能再重新进 行支付。
     protected $sellerSandValid;
 
+    //@description 映射字段
+    protected $mapping = [
+        //商户订单编号
+        'orderNo'=>'no_order',
+        //用户所属的商户号
+        'oidPartNer'=>'oid_partner',
+        //应用的id，调用app或者公众号支付时，需要传这个字段，该字段是去微信或者支付宝开放平台报备的appid
+        'appId'=>'appid',
+        //如果需要公众号支付，需要传入openid
+        'openId'=>'openid',
+        //商户业务类型，虚拟商品销售:101001,109001
+        'businessType'=>'busi_partner',
+        //订单总金额，大于0的数字精确到小数点后两位
+        'totalAmount'=>'money_order',
+        //订单金额
+        'userId'=>'user_id',
+        //付款方姓名非必填参数
+        'userName'=>'name_user',
+        //证件类型 非必填参数
+        'idType'=>'id_type',
+        //证件号码， 非必填参数
+        'idNo'=>'id_no',
+        //钱包用户id非必填参数
+        'beneficiary'=>'col_userid',
+        //收款方账户号，非必填参数
+        'merchantCode'=>'col_oidpartner',
+        //商品的名称，非必填参数
+        'goodsName'=>'name_goods',
+        //订单创建的时间，非必填参数
+        'createdAt'=>'dt_order',
+        //商家订单通知地址 非必填参数
+        'notifyUrl'=>'notify_url',
+        //支付宝或者微信支付结果通知页面，非必填参数
+        'returnUrl'=>'return_url',
+        //订单的描述
+        'orderDescription'=>'info_order',
+        //支付方式，I 微信扫码支付，L 支付宝扫码支付，W 微信公众号支付 L 微信App支付
+        'payType'=>'pay_type',
+        //风控参数
+        'riskItem'=>'risk_item',
+        //分账信息
+        'accountingToDistinguishData'=>'shareing_data',
+        //签名的方式
+        'signType'=>'sign_type',
+        //签名
+        'sign'=>'sign',
+        //担保商户号， 非必填参数
+        'securedPartner'=>'secured_partner',
+        //买房确认收货有效期
+        'buyerConfirmValid'=>'buyer_confirm_valid',
+        //卖方发货有效期
+        'sellerSandValid'=>'seller_send_valid'
+    ];
 
 
 }

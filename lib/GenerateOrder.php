@@ -7,7 +7,7 @@ class GenerateOrder{
 
     protected static $generateStock = [
 
-        Config::LianLian=>\xq\lianlian\GenerateOrder::CLASS
+        Config::LianLian=>\xq\lianlian\GenerateOtherOrder::CLASS
 
     ];
 

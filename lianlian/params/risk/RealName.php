@@ -1,16 +1,16 @@
 <?php
 namespace xq\lianlian\params\risk;
-use xq\interfacelib\LianLianParam;
+use xq\interfacelib\Params;
 
 /**
  * 实名认证类参数
 */
-class RealName extends Base implements LianLianParam {
+class RealName extends Base implements Params {
 
 
     //对应参数 user_info_full_name [对应连连支付的参数]
     //@description 用户注册姓名
-    protected $realFullName = '';
+    protected $realFullName;
 
     //对应参数 user_info_id_type [对应连连支付的参数]
     //@description 用户注册证件类型
@@ -23,7 +23,7 @@ class RealName extends Base implements LianLianParam {
     //9: 警官证
     //X:其他证件
     //默认为:0
-    protected $idType = 0;
+    protected $idType;
 
     //对应参数 user_info_id_no
     //@description 用户注册证件号码
@@ -44,5 +44,32 @@ class RealName extends Base implements LianLianParam {
     // 4:其它认证
     protected $identifyType;
 
-
+    protected $mapping = [
+        //商品的类别
+        'goodsCategory'=>'frms_ware_category',
+        //商户用户的唯一标识
+        'merchantCode'=>'user_info_mercht_userno',
+        //用户在商户系统中的登陆名
+        'merchantAccount'=>'user_info_mercht_userlogin',
+        //商户邮箱
+        'merchantEmail'=>'user_info_mail',
+        //绑定的手机号
+        'merchantBindPhone'=>'user_info_bind_phone',
+        //商户用户分类
+        'merchantUserType'=>'user_info_mercht_usertype',
+        //注册时间
+        'userRegisterAt'=>'user_info_dt_register',
+        //注册Ip
+        'userRegisterIpAddress'=>'user_info_register_ip',
+        //用户注册姓名
+        'realFullName'=>'user_info_full_name',
+        //正价类型
+        'idType'=>'user_info_id_type',
+        //用户注册的证件号码
+        'idNo'=>'user_info_id_no',
+        //实名认证的方式
+        'identifySate'=>'user_info_identify_state',
+        //实名认证方式
+        'identifyType'=>'user_info_identify_type'
+    ];
 }

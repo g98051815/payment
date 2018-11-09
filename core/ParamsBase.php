@@ -109,7 +109,7 @@ class ParamsBase  {
      * @param $value [值]
      * @throws ParamsException
     */
-    public function setVariate( string $key=null , string $value=null ){
+    public function setVariate( string $key=null , $value=null ){
 
         if( $key === null || $value  === null){
 

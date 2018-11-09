@@ -1,10 +1,11 @@
 <?php
 namespace xq\lianlian\params\risk;
-use xq\interfacelib\LianLianParam;
+use xq\core\ParamsBase;
+use xq\interfacelib\Params;
 /**
  * 基础的风控参数所有的风控参数必须继承此参数
 */
-class Base implements LianLianParam{
+class Base extends ParamsBase implements Params{
 
 
     //对应字段 frms_ware_category [连连支付对应的字段]
@@ -18,7 +19,7 @@ class Base implements LianLianParam{
 
 
     //对应字段  user_info_mercht_userlogin [连连支付对应字段]
-    //@description 商户用户唯一标识
+    //@description 用户在商户系统中的登陆 名(手机号、邮箱等标识)
     //商户用户登陆名
     protected $merchantAccount;
 
@@ -47,6 +48,7 @@ class Base implements LianLianParam{
     //@description 注册ip
     //用户在商户端注册时留存 的 IP
     protected $userRegisterIpAddress;
+
 
 
 

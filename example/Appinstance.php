@@ -2,7 +2,6 @@
 namespace xq\example;
 use xq\exception\GenerateOrderException;
 use xq\exception\ParamsException;
-use xq\lianlian\params\GenerateParam;
 use xq\lianlian\params\QueryParam;
 use xq\lib\GenerateOrder;
 use xq\lib\Config;
@@ -12,13 +11,82 @@ use xq\lib\QueryOrder;
 class Appinstance{
 
 
+    protected static $lianLianConfig =
+    [
+        //商户账号
+        'oid_partner'=>'201806250001948345',
+        //私匙
+        'private_key'=>__DIR__.'/rsa_private_key.pem',
+        //公匙
+        'public_key'=>__DIR__.'/rsa_public_key.pem',
+        //签名的方式
+        'sign_type'=>'RSA',
+        //微信的商户账号
+    ];
+
+
 
     public  function index(){
 
-        $this->search();
+        $this->generateOtherOrder();
 
 
     }
+
+    /**
+     * @throws  ParamsException;
+     * @throws GenerateOrderException
+    */
+    public function generateOtherOrder(){
+
+        $config = self::$lianLianConfig;
+
+        $generateWechatPublicParams = new \xq\lianlian\params\generate_other_platform\WeChatForPublicWap();
+
+        $riskParamRealName = new \xq\lianlian\params\risk\RealName();
+
+        $riskParamRealName->setVariates(
+
+            [
+                'goodsCategory'=>'3001',
+                'merchantCode'=>'18800171183',
+                'merchantBindPhone'=>'18800171183',
+                'userRegisterAt'=>date('YmdHis')
+            ]
+
+        );
+
+        $generateWechatPublicParams->setVariates(
+
+       [
+           'orderNo'=>'10002345678',
+           'oidPartNer'=>$config['oid_partner'],
+           'appId'=>'wxe58cf280312f7847',
+           'openId'=>'o-yym0w91kWpYrfciE3ynG8qQcFM',
+           'businessType'=>'109001',
+           'totalAmount'=>0.01,
+           'userId'=>'0101',
+           'merchantCode'=>$config['oid_partner'],
+           'notifyUrl'=>'http://baidu.com',
+           'goodsName'=>'这个是商品的名称',
+           'createdAt'=>date('YmdHis'),
+           'returnUrl'=>'http://baidu.com',
+           'orderDescription'=>'这个是订单的标识',
+           'riskItem'=>$riskParamRealName->getVariateWithMapping()
+       ]
+
+        );
+
+        //var_dump( $generateWechatPublicParams->getVariateWithMapping() );
+
+        //exit;
+
+
+        GenerateOrder::generate( Config::LianLian ,  $config  ,  $generateWechatPublicParams );
+
+
+    }
+
 
     /**
      * @throws ParamsException
@@ -27,40 +95,54 @@ class Appinstance{
     public function generate(){
 
 
-        $generateParam = new GenerateParam();
+        $generateNewParam = new \xq\lianlian\params\GenerateOrderNewChannel();
 
-        $generateParam->setVariates(
+
+
+        $config = self::$lianLianConfig;
+
+
+
+        //设置风控参数
+        $riskItemResult = $riskParamRealName->getVariateWithMapping();
+
+
+
+        $generateNewParam->setVariates(
 
             [
-                'orderNo'=>'这个是订单的编号',
-                'oidPartNer'=>'这个是订单的啥啥啥',
-                'appId'=>'微信的编号',
-                'openId'=>'微信的开放平台id',
-                'businessType'=>'101001',
-                'totalAmount'=>0.01,
-                'merchantCode'=>'连连支付的商户号',
-                'goodsName'=>'商品的名称',
-                'createdAt'=>time(),
-                'notifyUrl'=>'通知的地址',
-                'returnUrl'=>'跳转的地址',
-                'orderDescription'=>'订单的描述',
-                'payType'=>PayTypeParam::WXWEBVIEWPAY,
-                'riskItem'=>'风控字段',
+                'oidPartner'=>$config['oid_partner'],
+                //平台标识//1 android，2 ios，3 wap
+                'appRequest'=>'3',
+                //签名类型
                 'signType'=>'RSA',
-                'sign'=>'签名的字段',
-                'buyerConfirmValid'=>'买方方确认收货有效期',
-                'sellerSandValid'=>'卖方确认发货有效期'
+                //商户业务类型：虚拟类销售：101001 实物销售：109001
+                'businessPartner'=>'109001',
+                //订单编号
+                'noOrder'=>'XS0001222111',
+                //订单生成的时间
+                'orderCreatedAt'=>date('YmdHis'),
+                //商品的名称
+                'goodsName'=>'这是一首简单的小情歌',
+                //订单的详情
+                'infoOrder'=>'唱着人们心肠的曲折',
+                //总金额
+                'totalAmount'=>0.01,
+                //总金额
+                'notifyUrl'=>'http://baidu.com',
+                //支付结束后返回的url
+                'urlReturn'=>'http://baidu.com',
+                //点击返回显示的页面内容
+                'backUrl'=>'http://baidu.com',
+                //风险控制参数
+                'riskItem'=>$riskItemResult,
+                //商户系统中唯一的标识
             ]
 
         );
 
-        $config = [
-            'private_key'=>__DIR__.'/app_private_key.pem',
-            'public_key'=>__DIR__.'/app_public_key.pem'
-        ];
 
-
-        GenerateOrder::generate( Config::LianLian ,  $config  ,  $generateParam );
+        GenerateOrder::generate( Config::LianLian ,  $config  ,  $generateNewParam );
 
     }
 

@@ -6,8 +6,10 @@ use xq\interfacelib\Generate;
 use xq\interfacelib\LianLianNotify;
 use xq\interfacelib\Params;
 use \xq\lib\RsaEncryption;
-
-class GenerateOrder implements Generate{
+/**
+ *创建其他订单的内容
+*/
+class GenerateOtherOrder implements Generate{
 
      use \xq\core\Util;
 
@@ -24,23 +26,23 @@ class GenerateOrder implements Generate{
 
           $privateKey = self::getPrivateKey( $config['private_key'] );
 
-          $data = $params->getVariate();
+          $data = $params->getVariateWithMapping();
 
           RsaEncryption::setPrivateKey( $privateKey );
 
-          $signature = RsaEncryption::encryption( self::Encode( $data ) );
+          $signature = RsaEncryption::encryption( http_build_query( $params->getVariateWithMapping() ) );
 
           $data['sign'] = $signature;
 
-           $client = new Client();
+          $client = new Client();
 
           $res = $client->request('POST',PathConfig::OTHER_PLATFORM_GENERATE,[
-             'form_params'=>[
-                 'body'=>$data
-             ]
+            'body'=>self::Encode( $data ),
+            'debug'=>true
           ]);
 
         echo $res->getBody();
+
      }
 
 
