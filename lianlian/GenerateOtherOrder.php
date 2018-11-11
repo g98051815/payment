@@ -26,14 +26,16 @@ class GenerateOtherOrder implements Generate{
 
           $privateKey = self::getPrivateKey( $config['private_key'] );
 
+          RsaEncryption::setPublicKey( self::getPrivateKey( $config['public_key'] ) );
+
           $data = $params->getVariateWithMapping();
 
           RsaEncryption::setPrivateKey( $privateKey );
 
-          $signature = RsaEncryption::encryption( http_build_query( $params->getVariateWithMapping() ) );
+          $signature = RsaEncryption::encryption( urldecode( http_build_query( $params->getVariateWithMapping() ) ) );
 
           $data['sign'] = $signature;
-
+          
           $client = new Client();
 
           $res = $client->request('POST',PathConfig::OTHER_PLATFORM_GENERATE,[

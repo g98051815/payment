@@ -1,5 +1,6 @@
 <?php
 namespace xq\example;
+use xq\core\Json;
 use xq\exception\GenerateOrderException;
 use xq\exception\ParamsException;
 use xq\lianlian\params\QueryParam;
@@ -10,6 +11,7 @@ use xq\lib\QueryOrder;
 
 class Appinstance{
 
+    use \xq\core\Json;
 
     protected static $lianLianConfig =
     [
@@ -29,6 +31,8 @@ class Appinstance{
     public  function index(){
 
         $this->generateOtherOrder();
+
+        //$this->search();
 
 
     }
@@ -64,7 +68,7 @@ class Appinstance{
            'appId'=>'wxe58cf280312f7847',
            'openId'=>'o-yym0w91kWpYrfciE3ynG8qQcFM',
            'businessType'=>'109001',
-           'totalAmount'=>0.01,
+           'totalAmount'=>1,
            'userId'=>'0101',
            'merchantCode'=>$config['oid_partner'],
            'notifyUrl'=>'http://baidu.com',
@@ -72,7 +76,7 @@ class Appinstance{
            'createdAt'=>date('YmdHis'),
            'returnUrl'=>'http://baidu.com',
            'orderDescription'=>'这个是订单的标识',
-           'riskItem'=>$riskParamRealName->getVariateWithMapping()
+           'riskItem'=>self::Encode($riskParamRealName->getVariateWithMapping())
        ]
 
         );
